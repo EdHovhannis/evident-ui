@@ -1,6 +1,6 @@
 {
   "name": "evident-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "\"ui-kit\"",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -44,6 +44,7 @@
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.10.0"
   },
+  "prepublish": "tsc",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
