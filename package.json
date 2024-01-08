@@ -1,8 +1,12 @@
 {
   "name": "evident-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "\"ui-kit\"",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "webpack serve --mode development",
     "prod": "webpack --mode production"
