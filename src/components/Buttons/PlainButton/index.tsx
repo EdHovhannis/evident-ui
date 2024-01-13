@@ -5,5 +5,5 @@ export interface IPlainButton {
 }
 export const PlainButton: FC<IPlainButton> = (props) => {
   const { label } = props;
-  return <div className="test">{label || 'Test'}</div>;
+  return <button className="plainbutton">{label || 'push'}</button>;
 };

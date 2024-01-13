@@ -1,10 +1,11 @@
 import React from 'react';
-import { PlainButton } from '../components';
+import ReactDOM from 'react-dom/client';
+import { Container } from './Container';
 
 export const App = () => {
-  return (
-    <div>
-      <PlainButton label="test"></PlainButton>
-    </div>
-  );
+  return <Container>Test</Container>;
 };
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <App />
+);

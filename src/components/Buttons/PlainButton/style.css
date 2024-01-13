@@ -1,3 +1,10 @@
-.test {
-  color: green;
+.plainbutton {
+  border: 1px solid transparent;
+  outline: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.plainbutton:hover {
+  border: 1px solid black;
 }

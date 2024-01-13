@@ -4,9 +4,10 @@ import { EModes, EnvArgs, IPaths } from './webpack/types';
 import path from 'path';
 import { commonConfig } from './webpack/commonConfig';
 import { developmentConfig } from './webpack/developmentConfig';
+import { productionConfig } from './webpack/productionConfig';
 
 const paths: IPaths = {
-  devSource: path.resolve(__dirname, 'src', 'documentation', 'index.tsx'),
+  devSource: path.resolve(__dirname, 'src', 'documentation', 'App.tsx'),
   prodSource: path.resolve(__dirname, 'src', 'index.ts'),
   outSource: path.resolve(__dirname, 'dist'),
   templateSource: path.resolve(__dirname, 'public', 'index.html'),
@@ -20,7 +21,10 @@ const config = (_env: any, args: EnvArgs<any>): Configuration => {
         developmentConfig(paths.templateSource)
       );
     case EModes.Prod:
-      return merge(commonConfig(paths.prodSource, paths.outSource));
+      return merge(
+        commonConfig(paths.prodSource, paths.outSource),
+        productionConfig()
+      );
     default:
       throw new Error('No matching configuration was found!');
   }
