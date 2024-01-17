@@ -1,8 +1,11 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { Configuration } from 'webpack';
-import 'webpack-dev-server';
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import { Configuration } from "webpack";
+import "webpack-dev-server";
 
-export const developmentConfig = (templateSource: string): Configuration => {
+export const developmentConfig = (
+  templateSource: string,
+  componentsSource: string
+): Configuration => {
   return {
     plugins: [
       new HtmlWebpackPlugin({
@@ -13,6 +16,11 @@ export const developmentConfig = (templateSource: string): Configuration => {
       port: 7000,
       hot: true,
       historyApiFallback: true,
+    },
+    resolve: {
+      alias: {
+        "@": componentsSource,
+      },
     },
   };
 };

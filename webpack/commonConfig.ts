@@ -1,4 +1,4 @@
-import { Configuration } from 'webpack';
+import { Configuration } from "webpack";
 
 export const commonConfig = (
   entryPath: string,
@@ -8,22 +8,22 @@ export const commonConfig = (
     entry: { index: entryPath },
     output: {
       path: outputPath,
-      filename: '[name].js',
+      filename: "[name].js",
     },
     module: {
       rules: [
-        { test: /\.([cm]?ts|tsx)$/, loader: 'ts-loader' },
+        { test: /\.([cm]?ts|tsx)$/, loader: "ts-loader" },
         {
           test: /\.(?:js|mjs|cjs)$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
               presets: [
                 [
-                  '@babel/preset-env',
-                  '@babel/preset-react',
-                  { targets: 'defaults' },
+                  "@babel/preset-env",
+                  "@babel/preset-react",
+                  { targets: "defaults" },
                 ],
               ],
             },
@@ -31,12 +31,12 @@ export const commonConfig = (
         },
         {
           test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
+          use: ["style-loader", "css-loader"],
         },
       ],
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js'],
+      extensions: [".ts", ".tsx", ".js"],
     },
   };
 };

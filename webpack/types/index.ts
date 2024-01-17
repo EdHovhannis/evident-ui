@@ -4,11 +4,12 @@ export interface EnvArgs<T> {
 }
 
 export enum EModes {
-  Dev = 'development',
-  Prod = 'production',
+  Dev = "development",
+  Prod = "production",
 }
 
 export interface IPaths {
+  componentsSource: string;
   devSource: string;
   prodSource: string;
   outSource: string;
