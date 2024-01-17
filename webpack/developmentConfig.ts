@@ -12,6 +12,7 @@ export const developmentConfig = (templateSource: string): Configuration => {
     devServer: {
       port: 7000,
       hot: true,
+      historyApiFallback: true,
     },
   };
 };
