@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SidebarWrapper = styled.div`
   position: fixed;
-  color: #101213;
-  top: 54px;
-  left: 24px;
-  width: 120px;
-  padding: 4px;
+  padding: 8px 32px 16px 16px;
+  top: 42px;
+  background: #3b4044;
+  height: 100%;
 `;

@@ -11,7 +11,9 @@ export const TextedButton: FC<ITextedButton> = (props) => {
   const { label, onClick } = props;
   return (
     <TextedButtonW>
-      <TextedBtn onClick={onClick}>{label}</TextedBtn>
+      <TextedBtn onClick={onClick} size="s">
+        {label}
+      </TextedBtn>
     </TextedButtonW>
   );
 };

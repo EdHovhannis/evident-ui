@@ -5,7 +5,10 @@ import { TextedButton } from "@/components/Buttons/TextedButton";
 export const Sidebar = () => {
   return (
     <SidebarWrapper>
-      <TextedButton />
+      <TextedButton label="Buttons" onClick={() => console.log("work")} />
+      <TextedButton label="Inputs" />
+      <TextedButton label="Cards" />
+      <TextedButton label="Bars" />
     </SidebarWrapper>
   );
 };
