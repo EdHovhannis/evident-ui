@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { ISidebarLocation } from "../types";
 
-export const SidebarWrapper = styled.div`
+//TODO: Create a dinamic component and put into components directory
+
+export const SidebarWrapper = styled.aside<{ location: ISidebarLocation }>`
   position: fixed;
-  padding: 8px 32px 16px 16px;
-  top: 42px;
-  background: #3b4044;
+  padding: 64px 32px 16px 220px;
+  right: ${({ location }) => location === "right" && "0"};
+  left: ${({ location }) => location === "left" && "0"};
   height: 100%;
 `;

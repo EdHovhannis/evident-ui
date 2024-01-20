@@ -1,20 +1,21 @@
 import styled from "styled-components";
+import { TBtnSize } from "../types";
 
 export const TextedBtn = styled.button<{
-  size?: "s" | "m" | "l";
+  size?: TBtnSize;
+  clr?: string;
+  pd?: string;
 }>`
   outline: none;
+  border: none;
   background: transparent;
-  padding: ${(props) =>
-    props.size === "s"
-      ? "2px 4px"
-      : props.size === "m"
-      ? "4px 8px"
-      : "6px 12px"};
+  padding: ${({ size, pd }) =>
+    pd || (size === "s" ? "2px 4px" : size === "m" ? "4px 8px" : "6px 12px")};
   cursor: pointer;
-  border: 1px solid transparent;
   &:hover {
-    border: 1px solid #fadbc1;
+    opacity: 0.8;
   }
-  color: #fadbc1;
+  color: ${({ clr }) => clr || "#fadbc1"};
+  font-size: ${({ size }) =>
+    size === "s" ? "14px" : size === "m" ? "16px" : "18px"};
 `;
