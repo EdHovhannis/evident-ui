@@ -1,25 +1,21 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import { NavBar } from '@/components/Navigation';
-import { BrowserRouter, useNavigate } from 'react-router-dom';
-import { RoutersContainer } from './content/routes';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./routes";
+import { TopBar } from "./navigation";
+import "./index.css";
+import { Container } from "./style/Container";
 
 export const App = () => {
-  const navigate = useNavigate();
-  const navItems = [
-    { title: 'About', onClick: () => navigate('/') },
-    { title: 'Docs', onClick: () => navigate('/docs') },
-  ];
   return (
-    <>
-      <NavBar navItems={navItems} />
-      <RoutersContainer></RoutersContainer>
-    </>
+    <Container>
+      <TopBar />
+      <Router />
+    </Container>
   );
 };
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <App />
   </BrowserRouter>
