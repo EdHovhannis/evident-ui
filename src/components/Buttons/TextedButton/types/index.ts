@@ -1,4 +1,4 @@
-export type TBtnSize = "s" | "m" | "l";
+export type TBtnSize = 's' | 'm' | 'l';
 
 export interface ITextedButtonProps {
   label?: string;
@@ -6,5 +6,5 @@ export interface ITextedButtonProps {
   size?: TBtnSize;
   clr?: string;
   pd?: string;
-  templateKey?: string;
+  id?: string;
 }

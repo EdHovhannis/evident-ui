@@ -7,5 +7,6 @@ export const productionConfig = (): Configuration => {
       library: 'evident-ui',
       umdNamedDefine: true,
     },
+    externals: ['react', 'react-dom'],
   };
 };
