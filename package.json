@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "webpack serve --mode development",
-    "prod": "webpack --mode production"
+    "prod": "webpack --mode production --watch"
   },
   "repository": {
     "type": "git",
@@ -47,10 +47,16 @@
   },
   "prepublish": "tsc",
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.2",
     "styled-components": "^6.1.8",
     "uuid": "^9.0.1"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
   }
 }
