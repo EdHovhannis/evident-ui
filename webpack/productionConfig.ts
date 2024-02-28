@@ -1,4 +1,4 @@
-import { Configuration } from 'webpack';
+import { Configuration, ProvidePlugin } from 'webpack';
 
 export const productionConfig = (): Configuration => {
   return {
@@ -8,5 +8,6 @@ export const productionConfig = (): Configuration => {
       umdNamedDefine: true,
     },
     externals: ['react', 'react-dom'],
+    plugins: [new ProvidePlugin({ React: 'react' })],
   };
 };

@@ -1,6 +1,11 @@
-import React from "react";
-import { DocsWrapper } from "./style/DocsWrapper";
+import React from 'react';
+import { DocsWrapper } from './style/DocsWrapper';
+import { LeftBar } from './leftbar';
 
 export const Docs = () => {
-  return <DocsWrapper>Docs</DocsWrapper>;
+  return (
+    <DocsWrapper>
+      <LeftBar />
+    </DocsWrapper>
+  );
 };
