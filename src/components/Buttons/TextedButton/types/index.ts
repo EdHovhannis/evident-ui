@@ -4,7 +4,10 @@ export interface ITextedButtonProps {
   label?: string;
   onClick?: (event: React.SyntheticEvent<HTMLElement>) => void;
   size?: TBtnSize;
-  clr?: string;
-  pd?: string;
+  color?: string;
+  padding?: string;
   id?: string;
+  iconName?: string;
+  iconSize?: string;
+  iconColor?: string;
 }

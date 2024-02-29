@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const LeftBarWrapper = styled.div`
-  grid-area: leftbar;
+export const RightBarWrapper = styled.div`
+  grid-area: rightbar;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   width: 100%;
   height: auto;
   padding-top: 16px;

@@ -5,10 +5,6 @@ import { Main } from './Main';
 import { useAppSelector } from '../actions/redux';
 
 export const Router = () => {
-  const { componentsGroupId } = useAppSelector(
-    (state) => state.componentsGroupId
-  );
-  console.log('componentsGroupId', componentsGroupId);
   return (
     <Routes>
       <Route path="/" element={<Main />}></Route>
