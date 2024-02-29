@@ -21,15 +21,13 @@
     "webpack",
     "react"
   ],
-  "author": "Edgar Hovhannisyan <edhovhannis@gmail.com>",
+  "author": "Edgar Hovhannisyan <edhovhannis@gmail.com or ed.hovhannis1992@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EdHovhannis/evident-ui/issues"
   },
   "homepage": "https://github.com/EdHovhannis/evident-ui#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.23.7",
-    "@babel/preset-react": "^7.23.3",
     "@types/node": "^20.10.7",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
@@ -48,8 +46,9 @@
   "prepublish": "tsc",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "classnames": "^2.5.1",
+    "react": "^18",
+    "react-dom": "^18",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.2",
     "styled-components": "^6.1.8",

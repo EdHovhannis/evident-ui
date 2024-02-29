@@ -12,24 +12,7 @@ export const commonConfig = (
     },
     module: {
       rules: [
-        { test: /\.([cm]?ts|tsx)$/, loader: 'ts-loader' },
-        {
-          test: /\.(?:js|mjs|cjs)$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  '@babel/preset-react',
-                  'babel-plugin-styled-components',
-                  { targets: 'defaults' },
-                ],
-              ],
-            },
-          },
-        },
+        { test: /\.([cm]?ts|tsx)$/, loader: 'ts-loader' }, 
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],

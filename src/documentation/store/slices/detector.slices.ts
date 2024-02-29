@@ -1,14 +1,16 @@
+import { InitialState } from '@/documentation/types/interface/initialState';
+import { TComponentsGroupId } from '@/documentation/types/type/componentsGroupId';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  componentsGroupId: 'sdfsdf',
+const initialState: InitialState = {
+  componentsGroupId: 'buttons',
 };
 
 const detectorsSlice = createSlice({
   name: 'detectors',
   initialState,
   reducers: {
-    setComponentsGroupId(state, action: PayloadAction<string>) {
+    setComponentsGroupId(state, action: PayloadAction<TComponentsGroupId>) {
       state.componentsGroupId = action.payload;
     },
   },
