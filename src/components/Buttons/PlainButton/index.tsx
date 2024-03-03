@@ -1,17 +1,21 @@
-import { FC } from 'react';
-import './style.css';
-import { PlainButtonW } from './style';
-import { PlainBtn } from './style/PlainBtn';
+import { FC } from "react";
+import { PlainBtn } from "./style";
+import { IButtonProps } from "./types";
 
-export interface IPlainButton {
-  label: string;
-}
-
-export const PlainButton: FC<IPlainButton> = (props) => {
-  const { label } = props;
-  return (
-    <PlainButtonW>
-      <PlainBtn>{label || 'push'}</PlainBtn>
-    </PlainButtonW>
-  );
+export const PlainButton: FC<IButtonProps> = (props) => {
+  const { label, size, look, onClick, id, customStyle, kind } = props;
+  switch (look) {
+    case "textonly":
+      return (
+        <PlainBtn
+          style={{ ...customStyle }}
+          onClick={onClick}
+          $size={size}
+          id={id}
+          $kind={kind ?? "default"}
+        >
+          {label}
+        </PlainBtn>
+      );
+  }
 };

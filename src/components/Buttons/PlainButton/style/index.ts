@@ -1,1 +1,2 @@
-export * from "./PlainButtonW";
+export * from "./TextedBtn";
+export * from "./TextedBtnIcon";
