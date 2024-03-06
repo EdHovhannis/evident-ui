@@ -1,42 +1,43 @@
-import { LeftBarWrapper } from "./style";
-import { PlainButton } from "@/components/Buttons/PlainButton/index";
-import { useActions } from "@/documentation/actions/actions";
-import { TComponentsGroupId } from "@/documentation/types/type/componentsGroupId";
+import { SyntheticEvent } from 'react';
+import { LeftBarItemsW, LeftBarW, LeftBarItem } from './style';
+import { useActions } from '@/documentation/actions/actions';
+import { TComponentsGroupId } from '@/documentation/types/type/componentsGroupId';
+import { useAppSelector } from '@/documentation/actions/redux';
 
 export const LeftBar = () => {
   const { setComponentsGroupId } = useActions();
+  const { componentsGroupId } = useAppSelector(
+    (state) => state.componentsGroupId
+  );
+  const handleComponentsGroup = (e: SyntheticEvent) => {
+    setComponentsGroupId(e.currentTarget.id as TComponentsGroupId);
+  };
   return (
-    <LeftBarWrapper>
-      <PlainButton
-        label="Buttons"
-        id="buttons"
-        onClick={(e) =>
-          setComponentsGroupId(e.currentTarget.id as TComponentsGroupId)
-        }
-        look="textonly"
-        size={"big"}
-        kind={"default"}
-      />
-      <PlainButton
-        label="Inputs"
-        id="inputs"
-        onClick={(e) =>
-          setComponentsGroupId(e.currentTarget.id as TComponentsGroupId)
-        }
-        look="textonly"
-        size={"big"}
-        kind={"default"}
-      />
-      <PlainButton
-        label="Cards"
-        id="cards"
-        onClick={(e) =>
-          setComponentsGroupId(e.currentTarget.id as TComponentsGroupId)
-        }
-        look="textonly"
-        size={"big"}
-        kind={"default"}
-      />
-    </LeftBarWrapper>
+    <LeftBarW>
+      <h2>Components</h2>
+      <LeftBarItemsW>
+        <LeftBarItem
+          onClick={handleComponentsGroup}
+          id="buttons"
+          $isActive={componentsGroupId === 'buttons'}
+        >
+          Buttons
+        </LeftBarItem>
+        <LeftBarItem
+          onClick={handleComponentsGroup}
+          id="inputs"
+          $isActive={componentsGroupId === 'inputs'}
+        >
+          Inputs
+        </LeftBarItem>
+        <LeftBarItem
+          onClick={handleComponentsGroup}
+          id="cards"
+          $isActive={componentsGroupId === 'cards'}
+        >
+          Cards
+        </LeftBarItem>
+      </LeftBarItemsW>
+    </LeftBarW>
   );
 };

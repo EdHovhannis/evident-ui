@@ -7,5 +7,4 @@ export const RightBarWrapper = styled.div`
   align-items: flex-end;
   width: 100%;
   height: auto;
-  padding-top: 16px;
 `;
