@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LeftBarW = styled.div`
+export const LeftBarW = styled.aside`
   grid-area: leftbar;
   display: flex;
   flex-direction: column;

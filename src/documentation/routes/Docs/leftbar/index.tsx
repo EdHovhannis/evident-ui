@@ -1,42 +1,34 @@
-import { SyntheticEvent } from 'react';
-import { LeftBarItemsW, LeftBarW, LeftBarItem } from './style';
+import { PlainHeader } from '@/components';
+import { EHeaderSizes } from '@/components/Header/types';
 import { useActions } from '@/documentation/actions/actions';
-import { TComponentsGroupId } from '@/documentation/types/type/componentsGroupId';
 import { useAppSelector } from '@/documentation/actions/redux';
+import { leftBarStorage } from '@/documentation/services';
+import { LeftBarItem, LeftBarItemsW, LeftBarW } from './style';
 
 export const LeftBar = () => {
   const { setComponentsGroupId } = useActions();
   const { componentsGroupId } = useAppSelector(
     (state) => state.componentsGroupId
   );
-  const handleComponentsGroup = (e: SyntheticEvent) => {
-    setComponentsGroupId(e.currentTarget.id as TComponentsGroupId);
-  };
+  //TODO: add this function to useMemo
+  const leftBarItems = leftBarStorage({
+    setComponentsGroupId,
+    componentsGroupId,
+  });
   return (
     <LeftBarW>
-      <h2>Components</h2>
       <LeftBarItemsW>
-        <LeftBarItem
-          onClick={handleComponentsGroup}
-          id="buttons"
-          $isActive={componentsGroupId === 'buttons'}
-        >
-          Buttons
-        </LeftBarItem>
-        <LeftBarItem
-          onClick={handleComponentsGroup}
-          id="inputs"
-          $isActive={componentsGroupId === 'inputs'}
-        >
-          Inputs
-        </LeftBarItem>
-        <LeftBarItem
-          onClick={handleComponentsGroup}
-          id="cards"
-          $isActive={componentsGroupId === 'cards'}
-        >
-          Cards
-        </LeftBarItem>
+        <PlainHeader label={'Components'} size={EHeaderSizes.Middle} />
+        {leftBarItems.map((lbItem) => (
+          <LeftBarItem
+            key={lbItem.id}
+            onClick={lbItem.onClick}
+            id={lbItem.id}
+            $isActive={lbItem.isActive}
+          >
+            {lbItem.label}
+          </LeftBarItem>
+        ))}
       </LeftBarItemsW>
     </LeftBarW>
   );
