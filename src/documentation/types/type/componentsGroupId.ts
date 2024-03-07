@@ -1,1 +1,5 @@
-export type TComponentsGroupId = 'buttons' | 'inputs' | 'cards';
+export enum EComponentsGroupId {
+  Buttons = 'buttons',
+  Inputs = 'inputs',
+  Cards = 'cards',
+}

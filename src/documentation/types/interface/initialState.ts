@@ -1,5 +1,5 @@
-import { TComponentsGroupId } from '../type/componentsGroupId';
+import { EComponentsGroupId } from '../type/componentsGroupId';
 
 export interface InitialState {
-  componentsGroupId: TComponentsGroupId;
+  componentsGroupId: EComponentsGroupId;
 }
