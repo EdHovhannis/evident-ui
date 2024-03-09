@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { TableW } from './style/TableW';
+import { TableData, TableRow } from './style';
 
 interface IPlainTableProps {}
 
@@ -6,25 +8,31 @@ export const PlainTable: FC<IPlainTableProps> = () => {
   const defaultItems = [
     {
       row: [
-        { col: 'Test-1.1', id: '1' },
-        { col: 'Test-2.1', id: '2' },
-        { col: 'Test-3.1', id: '2' },
+        { col: 'Accept prop', id: '1' },
+        { col: 'Type', id: '2' },
+        { col: 'Requiretty', id: '2' },
+        { col: 'Description', id: '2' },
       ],
       id: '1',
       isHeader: true,
     },
     {
       row: [
-        { col: 'Test-3.2', id: '3' },
+        { col: 'Type', id: '3' },
         { col: 'Test-4.2', id: '4' },
         { col: 'Test-5.2', id: '4' },
+        {
+          col: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi voluptates rem placeat, deserunt qui culpa. Quos commodi nemo beatae harum sint officia nesciunt, dicta perspiciatis, consequatur, veritatis repellat in exercitationem.',
+          id: '4',
+        },
       ],
       id: '2',
     },
     {
       row: [
-        { col: 'Test-6.3', id: '3' },
-        { col: 'Test-7.3', id: '4' },
+        { col: 'Requiretty', id: '3' },
+        { col: 'lorem', id: '4' },
+        { col: 'Test-8.3', id: '4' },
         { col: 'Test-8.3', id: '4' },
       ],
       id: '3',
@@ -32,25 +40,16 @@ export const PlainTable: FC<IPlainTableProps> = () => {
   ];
 
   return (
-    <table>
+    <TableW>
       {defaultItems.map((trow) => {
-        if (trow.isHeader) {
-          return (
-            <tr>
-              {trow.row.map((thead) => {
-                return <th>{thead.col}</th>;
-              })}
-            </tr>
-          );
-        }
         return (
-          <tr>
+          <TableRow>
             {trow.row.map((tdata) => {
-              return <td>{tdata.col}</td>;
+              return <TableData>{tdata.col} </TableData>;
             })}
-          </tr>
+          </TableRow>
         );
       })}
-    </table>
+    </TableW>
   );
 };

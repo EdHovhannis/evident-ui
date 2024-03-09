@@ -19,4 +19,3 @@ export const PlainBtn = styled.button<ITextedBtn>`
     opacity: 0.8;
   }
 `;
-/* color: ${({ $color }) => $color || "#fadbc1"}; */
