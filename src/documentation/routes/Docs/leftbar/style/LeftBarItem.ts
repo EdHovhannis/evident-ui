@@ -10,7 +10,7 @@ export const LeftBarItem = styled.li<ILeftBarItem>`
   box-sizing: border-box;
   color: #2e3236;
   &:hover {
-    color: blueviolet;
+    color: ${({ $isActive }) => ($isActive ? '' : 'blueviolet')};
     cursor: pointer;
     border-radius: 2px;
   }

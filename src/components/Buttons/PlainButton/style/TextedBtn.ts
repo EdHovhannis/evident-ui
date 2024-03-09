@@ -1,9 +1,9 @@
-import styled, { CSSProperties } from "styled-components";
-import { IButtonProps } from "../types";
+import styled, { CSSProperties } from 'styled-components';
+import { IButtonProps } from '../../types';
 
 interface ITextedBtn {
-  $size: "big" | "middle" | "small" | "tiny";
-  $kind: "default" | "success" | "disable" | "warning" | "danger";
+  $size: 'big' | 'middle' | 'small' | 'tiny';
+  $kind: 'default' | 'success' | 'disable' | 'warning' | 'danger';
 }
 
 export const PlainBtn = styled.button<ITextedBtn>`

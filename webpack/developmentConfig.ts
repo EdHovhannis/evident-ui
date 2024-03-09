@@ -1,6 +1,6 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { Configuration } from "webpack";
-import "webpack-dev-server";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { Configuration } from 'webpack';
+import 'webpack-dev-server';
 
 export const developmentConfig = (
   templateSource: string,
@@ -19,8 +19,9 @@ export const developmentConfig = (
     },
     resolve: {
       alias: {
-        "@": componentsSource,
+        '@': componentsSource,
       },
     },
+    devtool: 'eval-source-map',
   };
 };
