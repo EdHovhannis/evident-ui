@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { TableRow, TableW, TableColumns, TableCol } from './style';
 
 interface IPlainTableProps {}
 
@@ -12,7 +11,7 @@ export const PlainTable: FC<IPlainTableProps> = () => {
         { col: 'Test-3.1', id: '2' },
       ],
       id: '1',
-      isHead: true,
+      isHeader: true,
     },
     {
       row: [
@@ -33,16 +32,25 @@ export const PlainTable: FC<IPlainTableProps> = () => {
   ];
 
   return (
-    <TableW>
-      {defaultItems.map((trow) => (
-        <TableRow key={trow.id}>
-          <TableColumns style={{ listStyle: 'none' }}>
-            {trow.row.map((tcol) => (
-              <TableCol key={tcol.id}>{tcol.col}</TableCol>
-            ))}
-          </TableColumns>
-        </TableRow>
-      ))}
-    </TableW>
+    <table>
+      {defaultItems.map((trow) => {
+        if (trow.isHeader) {
+          return (
+            <tr>
+              {trow.row.map((thead) => {
+                return <th>{thead.col}</th>;
+              })}
+            </tr>
+          );
+        }
+        return (
+          <tr>
+            {trow.row.map((tdata) => {
+              return <td>{tdata.col}</td>;
+            })}
+          </tr>
+        );
+      })}
+    </table>
   );
 };
