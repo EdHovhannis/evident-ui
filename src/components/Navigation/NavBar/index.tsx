@@ -1,9 +1,8 @@
-import React, { FC } from "react";
-import { NavWrapper } from "./style";
-import { NavLogo } from "./style/NavLogo";
-import { NavContent } from "./style/NavContent";
-import { NavItems } from "./style/NavItems";
-import { v4 as uuidv4 } from "uuid";
+import { FC } from 'react';
+import { NavWrapper } from './style';
+import { NavLogo } from './style/NavLogo';
+import { NavContent } from './style/NavContent';
+import { NavItems } from './style/NavItems';
 
 export interface INavBarProps {
   bgrnd?: string;
@@ -12,6 +11,7 @@ export interface INavBarProps {
   hgth?: string;
   navIcon?: string;
   navItems?: NavItem[];
+  gridArea?: string;
 }
 export interface NavItem {
   title: string;
@@ -19,20 +19,26 @@ export interface NavItem {
 }
 
 export const NavBar: FC<INavBarProps> = (props) => {
-  const { navIcon, bgrnd, clr, wdth, navItems, hgth } = props;
+  const { navIcon, bgrnd, clr, wdth, navItems, hgth, gridArea } = props;
 
-  const defaultItem: NavItem[] = [
-    { title: "Main", onClick: () => {} },
-    { title: "About", onClick: () => {} },
-    { title: "Content", onClick: () => {} },
+  const defaultItems: NavItem[] = [
+    { title: 'Main', onClick: () => {} },
+    { title: 'About', onClick: () => {} },
+    { title: 'Content', onClick: () => {} },
   ];
   return (
-    <NavWrapper bgrnd={bgrnd} clr={clr} wdth={wdth} hgth={hgth}>
+    <NavWrapper
+      $bgrnd={bgrnd}
+      $clr={clr}
+      $wdth={wdth}
+      $hgth={hgth}
+      $gridArea={gridArea}
+    >
       <NavLogo>
-        <i className="material-icons">{navIcon || "water_drop"}</i>
+        <i className="material-icons">{navIcon || 'water_drop'}</i>
       </NavLogo>
       <NavContent>
-        {(navItems || defaultItem).map((item: NavItem) => {
+        {(navItems || defaultItems).map((item: NavItem) => {
           return (
             <NavItems key={item.title} onClick={item.onClick}>
               {item.title}
