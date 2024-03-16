@@ -8,7 +8,7 @@ export const NavWrapper = styled.nav<{
   $gridArea?: string;
 }>`
   position: fixed;
-  background: ${(props) => props.$bgrnd || '#1b75d0'};
+  background: ${(props) => props.$bgrnd || '#565f6f'};
   color: ${(props) => props.$clr || '#ffffff'};
   width: ${(props) => props.$wdth || '100%'};
   height: ${(props) => props.$hgth || '64px'};
