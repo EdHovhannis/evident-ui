@@ -7,4 +7,5 @@ export const TableData = styled.td<ITableDataProps>`
   border: 1px solid #ffffff;
   padding: 4px;
   width: ${({ $width }) => ($width ? $width : 'auto')};
+  word-wrap: break-word;
 `;

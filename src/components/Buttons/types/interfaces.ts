@@ -1,10 +1,10 @@
 import { CSSProperties } from 'react';
-import { EButtonSizes } from './enums';
+import { TButtonSizes } from './type';
 
 export interface IButtonProps {
   label: string;
   onClick?: (event: React.SyntheticEvent<HTMLElement>) => void;
-  size: EButtonSizes;
+  size: TButtonSizes;
   customStyle?: CSSProperties;
   kind: 'default' | 'success' | 'disable' | 'warning' | 'danger';
   look: 'textonly' | 'filled' | 'withborder';

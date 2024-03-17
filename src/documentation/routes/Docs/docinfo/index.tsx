@@ -1,7 +1,6 @@
-import { ComponentExample, DocInfoW } from './style';
-import { ComponentW } from './style/ComponentW';
+import { CodeW, ComponentExample, DocInfoW } from './style';
+import { ComponentW } from './style';
 import { PlainButton } from '@/components';
-import { EButtonSizes } from '@/components/Buttons';
 import { PlainTable } from '@/components';
 import { useAppSelector } from '@/documentation/actions/redux';
 import { getComponentsInfo } from '@/documentation/services';
@@ -11,7 +10,7 @@ export const DocInfo = () => {
     (state) => state.componentsGroupId
   );
   const currentComponentsStack = getComponentsInfo(componentsGroupId);
-  console.log('currentComponentsStack', currentComponentsStack);
+
   return (
     <DocInfoW>
       {/* <PlainHeader label={'Components'} size={EHeaderSizes.Middle} /> */}
@@ -21,14 +20,14 @@ export const DocInfo = () => {
             <ComponentExample>
               <PlainButton
                 id="plain_button_textonly"
-                size={EButtonSizes.Big}
+                size="big"
                 label="PlainButton"
                 look="textonly"
                 kind="default"
               />
             </ComponentExample>
             <PlainTable tableData={item.tableData} />
-            <div>testt</div>
+            <CodeW>{item.code}</CodeW>
           </ComponentW>
         );
       })}

@@ -6,4 +6,6 @@ export const TableRow = styled.tr`
     color: #ffffff;
   }
   background-color: #d1d1d1;
+  color: #455d72;
+  font-size: 14px;
 `;
