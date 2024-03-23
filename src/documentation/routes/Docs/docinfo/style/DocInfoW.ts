@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const DocInfoW = styled.div`
+export const DocInfoW = styled.main`
   grid-area: docinfo;
   padding: 16px;
 `;

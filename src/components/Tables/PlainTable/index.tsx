@@ -1,56 +1,30 @@
 import { FC } from 'react';
+import { TableW } from './style/TableW';
+import { TableData, TableRow } from './style';
+import { IPlainTableProps } from '../types';
 
-interface IPlainTableProps {}
-
-export const PlainTable: FC<IPlainTableProps> = () => {
-  const defaultItems = [
-    {
-      row: [
-        { col: 'Test-1.1', id: '1' },
-        { col: 'Test-2.1', id: '2' },
-        { col: 'Test-3.1', id: '2' },
-      ],
-      id: '1',
-      isHeader: true,
-    },
-    {
-      row: [
-        { col: 'Test-3.2', id: '3' },
-        { col: 'Test-4.2', id: '4' },
-        { col: 'Test-5.2', id: '4' },
-      ],
-      id: '2',
-    },
-    {
-      row: [
-        { col: 'Test-6.3', id: '3' },
-        { col: 'Test-7.3', id: '4' },
-        { col: 'Test-8.3', id: '4' },
-      ],
-      id: '3',
-    },
-  ];
+export const PlainTable: FC<IPlainTableProps> = (props) => {
+  const { tableData } = props;
 
   return (
-    <table>
-      {defaultItems.map((trow) => {
-        if (trow.isHeader) {
+    <TableW>
+      <tbody>
+        {tableData?.map((trow) => {
           return (
-            <tr>
-              {trow.row.map((thead) => {
-                return <th>{thead.col}</th>;
-              })}
-            </tr>
+            <TableRow key={trow.id}>
+              {trow.row.map(
+                (tdata: { title: string; id: string; width?: string }) => {
+                  return (
+                    <TableData $width={tdata.width} key={tdata.id}>
+                      {tdata.title}
+                    </TableData>
+                  );
+                }
+              )}
+            </TableRow>
           );
-        }
-        return (
-          <tr>
-            {trow.row.map((tdata) => {
-              return <td>{tdata.col}</td>;
-            })}
-          </tr>
-        );
-      })}
-    </table>
+        })}
+      </tbody>
+    </TableW>
   );
 };

@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { NavWrapper } from './style';
-import { NavLogo } from './style/NavLogo';
-import { NavContent } from './style/NavContent';
-import { NavItems } from './style/NavItems';
+import { FC } from "react";
+import { NavW } from "./style";
+import { NavLogo } from "./style/NavLogo";
+import { NavContent } from "./style/NavContent";
+import { NavItems } from "./style/NavItems";
 
 export interface INavBarProps {
   bgrnd?: string;
@@ -22,20 +22,14 @@ export const NavBar: FC<INavBarProps> = (props) => {
   const { navIcon, bgrnd, clr, wdth, navItems, hgth, gridArea } = props;
 
   const defaultItems: NavItem[] = [
-    { title: 'Main', onClick: () => {} },
-    { title: 'About', onClick: () => {} },
-    { title: 'Content', onClick: () => {} },
+    { title: "Main", onClick: () => {} },
+    { title: "About", onClick: () => {} },
+    { title: "Content", onClick: () => {} },
   ];
   return (
-    <NavWrapper
-      $bgrnd={bgrnd}
-      $clr={clr}
-      $wdth={wdth}
-      $hgth={hgth}
-      $gridArea={gridArea}
-    >
+    <NavW $bgrnd={bgrnd} $clr={clr} $wdth={wdth} $hgth={hgth}>
       <NavLogo>
-        <i className="material-icons">{navIcon || 'water_drop'}</i>
+        <i className="material-icons">{navIcon || "water_drop"}</i>
       </NavLogo>
       <NavContent>
         {(navItems || defaultItems).map((item: NavItem) => {
@@ -46,6 +40,6 @@ export const NavBar: FC<INavBarProps> = (props) => {
           );
         })}
       </NavContent>
-    </NavWrapper>
+    </NavW>
   );
 };
