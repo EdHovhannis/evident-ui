@@ -1,9 +1,9 @@
-import { CodeW, ComponentExample, DocInfoW } from './style';
-import { ComponentW } from './style';
-import { PlainButton } from '@/components';
-import { PlainTable } from '@/components';
-import { useAppSelector } from '@/documentation/actions/redux';
-import { getComponentsInfo } from '@/documentation/services';
+import { CodeW, ExampleSections, DocInfoW } from "./style";
+import { ComponentW } from "./style";
+import { PlainButton } from "@/components";
+import { PlainTable } from "@/components";
+import { useAppSelector } from "@/documentation/actions/redux";
+import { getComponentsInfo } from "@/documentation/services";
 
 export const DocInfo = () => {
   const { componentsGroupId } = useAppSelector(
@@ -17,7 +17,7 @@ export const DocInfo = () => {
       {currentComponentsStack.map((item) => {
         return (
           <ComponentW key={item.example}>
-            <ComponentExample>
+            <ExampleSections>
               <PlainButton
                 id="plain_button_textonly"
                 size="big"
@@ -25,9 +25,13 @@ export const DocInfo = () => {
                 look="textonly"
                 kind="default"
               />
-            </ComponentExample>
-            <PlainTable tableData={item.tableData} />
-            <CodeW>{item.code}</CodeW>
+            </ExampleSections>
+            <ExampleSections>
+              <PlainTable tableData={item.tableData} />
+            </ExampleSections>
+            <ExampleSections>
+              <CodeW>{item.code}</CodeW>
+            </ExampleSections>
           </ComponentW>
         );
       })}

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const ComponentExample = styled.div`
+export const ExampleSections = styled.section`
   margin-bottom: 16px;
 `;
