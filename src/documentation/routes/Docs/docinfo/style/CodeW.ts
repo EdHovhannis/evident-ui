@@ -1,5 +1,3 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const CodeW = styled.div`
-
-`
+export const CodeW = styled.pre``;
