@@ -27,7 +27,6 @@ const ComponentsData: IComponentsData = {
             {
               title: 'Description',
               id: '5Yt4dN',
-              width: '40%',
             },
           ],
           id: 'BFxdaG',
@@ -44,7 +43,6 @@ const ComponentsData: IComponentsData = {
             {
               title: 'Defines the name of the button',
               id: 'nbQzte',
-              width: '40%',
             },
           ],
           id: 'nwnjy1',
@@ -64,7 +62,6 @@ const ComponentsData: IComponentsData = {
             {
               title: 'Defines a click event',
               id: 'eGL82k',
-              width: '40%',
             },
           ],
           id: 'RJQn1F',
@@ -84,10 +81,28 @@ const ComponentsData: IComponentsData = {
             {
               title: 'Defines the theme of the button',
               id: 'UsbvUl',
-              width: '40%',
             },
           ],
           id: '2PL4NY',
+        },
+        {
+          row: [
+            {
+              title: 'look',
+              id: 'f3D6zY',
+            },
+            {
+              title: `'textonly' | 'filled' | 'withborder'`,
+              id: '7D2tK4',
+            },
+            { title: 'not required', id: 'hq6kw5' },
+            { title: '-', id: 'lPpCLp' },
+            {
+              title: 'defines the general appearance of the button',
+              id: '1G3ovx',
+            },
+          ],
+          id: 'O3BAwD',
         },
         {
           row: [
@@ -102,15 +117,22 @@ const ComponentsData: IComponentsData = {
             { title: 'not required', id: 'hq6kw5' },
             { title: '-', id: 'Etmr5pn' },
             {
-              title: 'Defines the theme of the button',
+              title: 'Defines the size of the button',
               id: 'Y5Gvmy',
-              width: '40%',
             },
           ],
           id: 'gjpQTR',
         },
       ],
-      code: 'some 1111',
+      code: `
+      <span class="tagArrow"><</span><span class="tagName">PlainButton</span> 
+        <span class="tagAtr">id</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"plain_button_textonly"</span>
+        <span class="tagAtr">size</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"big"</span>
+        <span class="tagAtr">label</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"PlainButton"</span>
+        <span class="tagAtr">look</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"textonly"</span>
+        <span class="tagAtr">kind</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"default"</span>
+      <span class="tagArrow">/></span>
+      `,
     },
   ],
   inputs: [

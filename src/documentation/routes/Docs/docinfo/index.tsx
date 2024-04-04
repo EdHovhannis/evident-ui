@@ -1,9 +1,11 @@
-import { CodeW, ExampleSections, DocInfoW } from "./style";
-import { ComponentW } from "./style";
-import { PlainButton } from "@/components";
-import { PlainTable } from "@/components";
-import { useAppSelector } from "@/documentation/actions/redux";
-import { getComponentsInfo } from "@/documentation/services";
+import { CodeW, ExampleSections, DocInfoW } from './style';
+import { ComponentW } from './style';
+import { PlainButton } from '@/components';
+import { PlainTable } from '@/components';
+import { useAppSelector } from '@/documentation/actions/redux';
+import { getComponentsInfo } from '@/documentation/services';
+import parse from 'html-react-parser';
+import classNames from 'classnames';
 
 export const DocInfo = () => {
   const { componentsGroupId } = useAppSelector(
@@ -30,7 +32,12 @@ export const DocInfo = () => {
               <PlainTable tableData={item.tableData} />
             </ExampleSections>
             <ExampleSections>
-              <CodeW>{item.code}</CodeW>
+              <CodeW>
+                {parse(item.code)}
+                <i className={classNames('material-icons', 'content_copy')}>
+                  content_copy
+                </i>
+              </CodeW>
             </ExampleSections>
           </ComponentW>
         );
