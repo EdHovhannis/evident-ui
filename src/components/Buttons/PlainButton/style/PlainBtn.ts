@@ -6,7 +6,7 @@ interface ITextedBtn {
   $kind: 'default' | 'success' | 'disable' | 'warning' | 'danger';
 }
 
-export const PlainBtn = styled.button<ITextedBtn>`
+export const Textonly = styled.button<ITextedBtn>`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -17,5 +17,22 @@ export const PlainBtn = styled.button<ITextedBtn>`
 
   &:hover {
     opacity: 0.8;
+  }
+`;
+
+export const Withborder = styled.button<ITextedBtn>`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #bdbdbd;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px 16px;
+
+  &:hover {
+    background-color: #bdbdbd;
+    color: #000;
   }
 `;

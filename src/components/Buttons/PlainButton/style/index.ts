@@ -1,2 +1,1 @@
-export * from "./TextedBtn";
-export * from "./TextedBtnIcon";
+export * from './PlainBtn';
