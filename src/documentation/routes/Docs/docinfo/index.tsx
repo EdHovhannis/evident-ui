@@ -4,7 +4,6 @@ import { PlainButton } from '@/components';
 import { PlainTable } from '@/components';
 import { useAppSelector } from '@/documentation/actions/redux';
 import { getComponentsInfo } from '@/documentation/services';
-import { CodeBlock, CopyBlock, github } from 'react-code-blocks';
 
 export const DocInfo = () => {
   const { componentsGroupId } = useAppSelector(
@@ -37,14 +36,7 @@ export const DocInfo = () => {
             <ExampleSections>
               <PlainTable tableData={item.tableData} />
             </ExampleSections>
-            <ExampleSections>
-              <CodeBlock
-                text={item.code}
-                language="javascript"
-                showLineNumbers={true}
-                theme={github}
-              />
-            </ExampleSections>
+            <ExampleSections>test</ExampleSections>
           </ComponentW>
         );
       })}

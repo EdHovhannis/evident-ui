@@ -1,15 +1,31 @@
-import { CopyBlock, vs2015 } from 'react-code-blocks';
-import { MainWrapper } from './style/MainWrapper';
+import React from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Syntax from 'react-syntax-highlighter';
 
-export const About = () => {
-  return (
-    <MainWrapper>
-      <CopyBlock
-        text={`<PlainButton\n id="plain_button_textonly"\n size="big" label="PlainButton"\n look="textonly"\n kind="default"\n/>`}
-        language="javascript"
-        showLineNumbers={true}
-        theme={vs2015}
-      />
-    </MainWrapper>
-  );
-};
+export class About extends React.Component {
+  state = {
+    value: `function name(params:type)`,
+    copied: false,
+  };
+
+  render() {
+    return (
+      <div style={{ position: 'relative' }}>
+        <Syntax>{this.state.value}</Syntax>
+
+        <div>
+          <CopyToClipboard
+            text={this.state.value}
+            onCopy={() => this.setState({ copied: true })}
+          >
+            <button>Copy to clipboard with button</button>
+          </CopyToClipboard>
+        </div>
+
+        {this.state.copied ? (
+          <span style={{ color: 'red' }}>Copied.</span>
+        ) : null}
+      </div>
+    );
+  }
+}
