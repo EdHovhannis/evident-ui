@@ -125,13 +125,13 @@ const ComponentsData: IComponentsData = {
         },
       ],
       code: `
-      <span class="tagArrow"><</span><span class="tagName">PlainButton</span> 
-        <span class="tagAtr">id</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"plain_button_textonly"</span>
-        <span class="tagAtr">size</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"big"</span>
-        <span class="tagAtr">label</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"PlainButton"</span>
-        <span class="tagAtr">look</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"textonly"</span>
-        <span class="tagAtr">kind</span><span class="tagAtrEqueal">=</span><span class="tagAtrName">"default"</span>
-      <span class="tagArrow">/></span>
+      <PlainButton
+              id="plain_button_textonly"
+              size="big"
+              label="PlainButton"
+              look="textonly"
+              kind="default"
+      />
       `,
     },
   ],

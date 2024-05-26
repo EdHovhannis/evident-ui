@@ -1,11 +1,9 @@
-import { CodeW, ExampleSections, DocInfoW } from './style';
-import { ComponentW } from './style';
-import { PlainButton } from '@/components';
-import { PlainTable } from '@/components';
-import { useAppSelector } from '@/documentation/actions/redux';
-import { getComponentsInfo } from '@/documentation/services';
-import parse from 'html-react-parser';
-import classNames from 'classnames';
+import { CodeW, ExampleSections, DocInfoW } from "./style";
+import { ComponentW } from "./style";
+import { PlainButton } from "@/ui-kit";
+import { PlainTable } from "@/ui-kit";
+import { useAppSelector } from "@/documentation/actions/redux";
+import { getComponentsInfo } from "@/documentation/services";
 
 export const DocInfo = () => {
   const { componentsGroupId } = useAppSelector(
@@ -19,7 +17,7 @@ export const DocInfo = () => {
       {currentComponentsStack.map((item) => {
         return (
           <ComponentW key={item.example}>
-            <ExampleSections>
+            <ExampleSections $flex>
               <PlainButton
                 id="plain_button_textonly"
                 size="big"
@@ -27,18 +25,18 @@ export const DocInfo = () => {
                 look="textonly"
                 kind="default"
               />
+              <PlainButton
+                id="plain_button_withborder"
+                size="big"
+                label="PlainButton"
+                look="withborder"
+                kind="default"
+              />
             </ExampleSections>
             <ExampleSections>
               <PlainTable tableData={item.tableData} />
             </ExampleSections>
-            <ExampleSections>
-              <CodeW>
-                {parse(item.code)}
-                <i className={classNames('material-icons', 'content_copy')}>
-                  content_copy
-                </i>
-              </CodeW>
-            </ExampleSections>
+            <ExampleSections>test</ExampleSections>
           </ComponentW>
         );
       })}

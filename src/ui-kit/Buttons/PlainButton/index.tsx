@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { PlainBtn } from './style';
+import { Textonly, Withborder } from './style';
 import { IButtonProps } from '../types';
 
 export const PlainButton: FC<IButtonProps> = (props) => {
@@ -7,7 +7,7 @@ export const PlainButton: FC<IButtonProps> = (props) => {
   switch (look) {
     case 'textonly':
       return (
-        <PlainBtn
+        <Textonly
           style={{ ...customStyle }}
           onClick={onClick}
           id={id}
@@ -15,7 +15,19 @@ export const PlainButton: FC<IButtonProps> = (props) => {
           $kind={kind ?? 'default'}
         >
           {label}
-        </PlainBtn>
+        </Textonly>
+      );
+    case 'withborder':
+      return (
+        <Withborder
+          style={{ ...customStyle }}
+          onClick={onClick}
+          id={id}
+          $size={size}
+          $kind={kind ?? 'default'}
+        >
+          {label}
+        </Withborder>
       );
   }
 };
