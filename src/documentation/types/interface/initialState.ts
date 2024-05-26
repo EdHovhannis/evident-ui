@@ -1,4 +1,4 @@
-import { EComponentsGroupId } from '../type/componentsGroupId';
+import { EComponentsGroupId } from "../enums/componentsGroupId";
 
 export interface InitialState {
   componentsGroupId: EComponentsGroupId;

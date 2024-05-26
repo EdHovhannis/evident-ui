@@ -4,6 +4,7 @@ import { PlainButton } from "@/ui-kit";
 import { PlainTable } from "@/ui-kit";
 import { useAppSelector } from "@/documentation/actions/redux";
 import { getComponentsInfo } from "@/documentation/services";
+import { CodeBlock } from "@/documentation/components";
 
 export const DocInfo = () => {
   const { componentsGroupId } = useAppSelector(
@@ -36,7 +37,9 @@ export const DocInfo = () => {
             <ExampleSections>
               <PlainTable tableData={item.tableData} />
             </ExampleSections>
-            <ExampleSections>test</ExampleSections>
+            <ExampleSections>
+              <CodeBlock codeContent={item.code} />
+            </ExampleSections>
           </ComponentW>
         );
       })}
