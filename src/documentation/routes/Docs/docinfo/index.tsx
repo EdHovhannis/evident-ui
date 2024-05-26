@@ -1,9 +1,9 @@
-import { CodeW, ExampleSections, DocInfoW } from './style';
-import { ComponentW } from './style';
-import { PlainButton } from '@/components';
-import { PlainTable } from '@/components';
-import { useAppSelector } from '@/documentation/actions/redux';
-import { getComponentsInfo } from '@/documentation/services';
+import { CodeW, ExampleSections, DocInfoW } from "./style";
+import { ComponentW } from "./style";
+import { PlainButton } from "@/ui-kit";
+import { PlainTable } from "@/ui-kit";
+import { useAppSelector } from "@/documentation/actions/redux";
+import { getComponentsInfo } from "@/documentation/services";
 
 export const DocInfo = () => {
   const { componentsGroupId } = useAppSelector(

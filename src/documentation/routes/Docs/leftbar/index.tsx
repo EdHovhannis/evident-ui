@@ -1,9 +1,9 @@
-import { PlainHeader } from '@/components';
-import { EHeaderSizes } from '@/components/Header/types';
-import { useActions } from '@/documentation/actions/actions';
-import { useAppSelector } from '@/documentation/actions/redux';
-import { leftBarStorage } from '@/documentation/services';
-import { LeftBarItem, LeftBarItemsW, LeftBarW } from './style';
+import { PlainHeader } from "@/ui-kit";
+import { EHeaderSizes } from "@/ui-kit/Header/types";
+import { useActions } from "@/documentation/actions/actions";
+import { useAppSelector } from "@/documentation/actions/redux";
+import { leftBarStorage } from "@/documentation/services";
+import { LeftBarItem, LeftBarItemsW, LeftBarW } from "./style";
 
 export const LeftBar = () => {
   const { setComponentsGroupId } = useActions();
@@ -18,7 +18,7 @@ export const LeftBar = () => {
   return (
     <LeftBarW>
       <LeftBarItemsW>
-        <PlainHeader label={'Components'} size={EHeaderSizes.Middle} />
+        <PlainHeader label={"Components"} size={EHeaderSizes.Middle} />
         {leftBarItems.map((lbItem) => (
           <LeftBarItem
             key={lbItem.id}

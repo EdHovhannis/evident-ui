@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { NavBar } from "@/components/Navigation";
+import { NavBar } from "@/ui-kit/Navigation";
 import { HeaderW } from "./style/HeaderW";
 
 export const TopBar = () => {
