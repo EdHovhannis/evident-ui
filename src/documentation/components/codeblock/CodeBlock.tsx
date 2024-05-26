@@ -1,30 +1,40 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import Syntax from "react-syntax-highlighter";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { CodeBlockW } from "./style";
+import { CopyIconW } from "./style/CopyIconW";
+import { CopyIconBtn } from "./style/CopyIconBtn";
+import { vs2015, vs } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 interface CodeBlockProps {
   codeContent: string;
+  allowCopy?: boolean;
 }
 export const CodeBlock: FC<CodeBlockProps> = (props) => {
   const { codeContent } = props;
-  const [isCopied, setIsCopied] = useState({ isCopied: false });
+  const [isCopied, setIsCopied] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsCopied(false), 3000);
+    return () => clearTimeout(timer);
+  }, [isCopied]);
 
   return (
-    <div style={{ position: "relative" }}>
-      <Syntax showLineNumbers>{codeContent}</Syntax>
+    <CodeBlockW>
+      <SyntaxHighlighter
+        showLineNumbers
+        customStyle={{ fontSize: "16px" }}
+        style={vs}
+      >
+        {codeContent}
+      </SyntaxHighlighter>
 
-      <div>
-        <CopyToClipboard
-          text={codeContent}
-          onCopy={() => setIsCopied({ isCopied: true })}
-        >
-          <button>
-            <i className="material-icons">content_copy</i>
-          </button>
+      <CopyIconW>
+        <CopyToClipboard text={codeContent} onCopy={() => setIsCopied(true)}>
+          <CopyIconBtn className="material-icons" $copied={isCopied}>
+            {isCopied ? "check" : "content_copy"}
+          </CopyIconBtn>
         </CopyToClipboard>
-      </div>
-
-      {isCopied ? <span style={{ color: "red" }}>Copied.</span> : null}
-    </div>
+      </CopyIconW>
+    </CodeBlockW>
   );
 };

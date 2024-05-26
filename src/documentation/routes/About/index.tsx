@@ -1,10 +1,11 @@
-import { CodeBlock } from "@/documentation/components";
+import toast, { Toaster } from "react-hot-toast";
 
 export const About = () => {
-  const code = `function foo(){}`;
+  const notify = () => toast.success("Hello World");
   return (
     <div>
-      <CodeBlock codeContent={code} />
+      <button onClick={notify}>Make me a toast</button>
+      <Toaster />
     </div>
   );
 };
