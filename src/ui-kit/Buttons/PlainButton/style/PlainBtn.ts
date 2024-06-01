@@ -1,38 +1,36 @@
-import styled, { CSSProperties } from 'styled-components';
-import { IButtonProps } from '../../types';
+import styled from "styled-components";
+import { IBtnKind, IBtnStyleProps } from "../../types";
 
-interface ITextedBtn {
-  $size: 'big' | 'middle' | 'small' | 'tiny';
-  $kind: 'default' | 'success' | 'disable' | 'warning' | 'danger';
-}
-
-export const Textonly = styled.button<ITextedBtn>`
+export const Textonly = styled.button<IBtnStyleProps>`
   display: flex;
   align-items: center;
   gap: 8px;
   outline: none;
   border: none;
-  background: transparent;
+  background: red;
   cursor: pointer;
-
   &:hover {
     opacity: 0.8;
   }
 `;
 
-export const Withborder = styled.button<ITextedBtn>`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  outline: none;
-  border-radius: 4px;
-  border: 1px solid #bdbdbd;
-  background: transparent;
-  cursor: pointer;
-  padding: 8px 16px;
+const getColor = ($kind: IBtnKind) => {
+  switch ($kind) {
+    case "default": {
+      return "#ffffff";
+    }
+  }
+};
 
+export const DefaultView = styled.button<IBtnStyleProps>`
+  background-color: #2faced;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: ${({ $kind }) => getColor($kind)};
   &:hover {
-    background-color: #bdbdbd;
-    color: #000;
+    transition: 0.2s;
+    background-color: #006db6;
+    cursor: pointer;
   }
 `;

@@ -20,13 +20,6 @@ export const DocInfo = () => {
           <ComponentW key={item.example}>
             <ExampleSections $flex>
               <PlainButton
-                id="plain_button_textonly"
-                size="big"
-                label="PlainButton"
-                look="textonly"
-                kind="default"
-              />
-              <PlainButton
                 id="plain_button_withborder"
                 size="big"
                 label="PlainButton"
