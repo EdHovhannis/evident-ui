@@ -1,12 +1,16 @@
-import { CSSProperties } from 'react';
-import { TButtonSizes } from './type';
+import { IBtnKind, IBtnLook, IBtnSize } from "./type";
 
-export interface IButtonProps {
+export interface IBtnProps {
   label: string;
   onClick?: (event: React.SyntheticEvent<HTMLElement>) => void;
-  size: TButtonSizes;
-  customStyle?: CSSProperties;
-  kind: 'default' | 'success' | 'disable' | 'warning' | 'danger';
-  look: 'textonly' | 'filled' | 'withborder';
+  size: IBtnSize;
+  kind: IBtnKind;
+  look: IBtnLook;
   id: string;
+}
+
+export interface IBtnStyleProps {
+  $size?: IBtnSize;
+  $kind?: IBtnKind;
+  $look?: IBtnLook;
 }
