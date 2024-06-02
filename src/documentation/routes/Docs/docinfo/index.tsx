@@ -1,4 +1,4 @@
-import { CodeW, ExampleSections, DocInfoW } from "./style";
+import { ExampleSections, DocInfoW } from "./style";
 import { ComponentW } from "./style";
 import { PlainButton } from "@/ui-kit";
 import { PlainTable } from "@/ui-kit";
@@ -14,7 +14,6 @@ export const DocInfo = () => {
 
   return (
     <DocInfoW>
-      {/* <PlainHeader label={'Components'} size={EHeaderSizes.Middle} /> */}
       {currentComponentsStack.map((item) => {
         return (
           <ComponentW key={item.example}>
@@ -25,6 +24,55 @@ export const DocInfo = () => {
                 label="PlainButton"
                 look="withborder"
                 kind="default"
+              />
+              <PlainButton
+                id="plain_button_withborder"
+                size="big"
+                label="PlainButton"
+                look="withborder"
+                kind="success"
+              />
+              <PlainButton
+                id="plain_button_withborder"
+                size="big"
+                label="PlainButton"
+                look="withborder"
+                kind="warning"
+              />
+              <PlainButton
+                id="plain_button_withborder"
+                size="big"
+                label="PlainButton"
+                look="withborder"
+                kind="danger"
+              />
+              <PlainButton
+                id="plain_button_withborder"
+                size="big"
+                label="PlainButton"
+                look="withborder"
+                kind="disable"
+              />
+              <PlainButton
+                id="plain_button_withborder"
+                size="big"
+                label="PlainButton"
+                look="withborder"
+                kind="transparent"
+              />
+              <PlainButton
+                id="plain_button_withborder"
+                size="big"
+                label="PlainButton"
+                look="withborder"
+                kind="filled"
+              />
+              <PlainButton
+                id="plain_button_withborder"
+                size="big"
+                label="PlainButton"
+                look="withborder"
+                kind="unfilled"
               />
             </ExampleSections>
             <ExampleSections>
